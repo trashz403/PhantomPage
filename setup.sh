@@ -51,7 +51,7 @@ main() {
             echo -e "${white} [${red}+${white}]${red} Error : Failed to install mirrormate.${reset}"
             exit 1
         fi
-
+        sleep 3
         clear
         banner
     else
