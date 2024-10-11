@@ -14,19 +14,19 @@ cyan = "\033[36m"
 def banner():
     start_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     banner_text = f"""
-    {white} +-----------------------------------------------------------------+
-    {white} |{green} ██████╗ ██╗  ██╗ █████╗ ███╗   ██╗████████╗ ██████╗ ███╗   ███╗{white} |
-    {white} |{green} ██╔══██╗██║  ██║██╔══██╗████╗  ██║╚══██╔══╝██╔═══██╗████╗ ████║{white} |
-    {white} |{green} ██████╔╝███████║███████║██╔██╗ ██║   ██║   ██║   ██║██╔████╔██║{white} |
-    {white} |{green} ██╔═══╝ ██╔══██║██╔══██║██║╚██╗██║   ██║   ██║   ██║██║╚██╔╝██║{white} |
-    {white} |{green} ██║     ██║  ██║██║  ██║██║ ╚████║   ██║   ╚██████╔╝██║ ╚═╝ ██║{white} |
-    {white} |{green} ╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝   ╚═╝    ╚═════╝ ╚═╝     ╚═╝{white} |
-    {white} +-----------------------------------------------------------------+
-    {white} |{green}PHANTOM TOOL - A simple tool to clone websites and download files{white}| 
-    {white} +-----------------------------------------------------------------+ 
+{white} +-----------------------------------------------------------------+
+{white} |{green} ██████╗ ██╗  ██╗ █████╗ ███╗   ██╗████████╗ ██████╗ ███╗   ███╗{white} |
+{white} |{green} ██╔══██╗██║  ██║██╔══██╗████╗  ██║╚══██╔══╝██╔═══██╗████╗ ████║{white} |
+{white} |{green} ██████╔╝███████║███████║██╔██╗ ██║   ██║   ██║   ██║██╔████╔██║{white} |
+{white} |{green} ██╔═══╝ ██╔══██║██╔══██║██║╚██╗██║   ██║   ██║   ██║██║╚██╔╝██║{white} |
+{white} |{green} ██║     ██║  ██║██║  ██║██║ ╚████║   ██║   ╚██████╔╝██║ ╚═╝ ██║{white} |
+{white} |{green} ╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝   ╚═╝    ╚═════╝ ╚═╝     ╚═╝{white} |
+{white} +-----------------------------------------------------------------+
+{white} |{green}PHANTOM TOOL - A simple tool to clone websites and download files{white}| 
+{white} +-----------------------------------------------------------------+ 
     """
     print(banner_text)
-    print(f"{green}Script started at : {red}{start_time}{reset}\n")
+    print(f"{white} [{green}+{white}] {green}Script started at : {red}{start_time}{reset}\n")
 
 def handle_clone(url=None, file_url=None):
     if url:
