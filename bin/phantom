@@ -2,34 +2,41 @@
 
 import argparse
 import sys
-from mirrormate import clone
+import mirrormate
+
+def handle_clone(url=None, file_url=None, silent=False):
+    if url:
+        print(f"Starting to mirror the website: {url} (silent: {silent})")
+        if mirrormate.clone(url=url, silent=silent):
+            print(f"Successfully mirrored the website: {url}")
+        else:
+            print(f"Failed to mirror the website: {url}")
+    elif file_url:
+        print(f"Starting to download the file: {file_url} (silent: {silent})")
+        if mirrormate.clone(file_url=file_url, silent=silent):
+            print(f"Successfully downloaded the file: {file_url}")
+        else:
+            print(f"Failed to download the file: {file_url}")
+    else:
+        print("Error: No valid URL or file URL provided.")
 
 def main():
-    parser = argparse.ArgumentParser(description='phantom : A simple tool to clone websites and download files.')
+    parser = argparse.ArgumentParser(description='phantom: A simple tool to clone websites and download files.')
     parser.add_argument('--clone', type=str, help='URL of the website to mirror.')
     parser.add_argument('--file', type=str, help='URL of the file to download.')
     parser.add_argument('--silent', action='store_true', help='Run the tool in silent mode.')
-
+    
     args = parser.parse_args()
 
     if args.clone and args.file:
         print("Error: Please specify either --clone or --file, not both.")
         sys.exit(1)
-    
+
+    # Call the handle_clone function with the appropriate arguments
     if args.clone:
-        print("Starting to mirror the website...")
-        if clone(url=args.clone, silent=args.silent):
-            print("Successfully mirrored the website.")
-        else:
-            print("Failed to mirror the website.")
-    
+        handle_clone(url=args.clone, silent=args.silent)
     elif args.file:
-        print("Starting to download the file...")
-        if clone(file_url=args.file, silent=args.silent):
-            print("Successfully downloaded the file.")
-        else:
-            print("Failed to download the file.")
-    
+        handle_clone(file_url=args.file, silent=args.silent)
     else:
         print("Error: You must specify either --clone or --file.")
         sys.exit(1)
