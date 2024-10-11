@@ -72,4 +72,4 @@ This command will download the file located at `https://example.com/file.py`.
   
 ⚠ **Note: Always use this tool responsibly and only on systems you have permission to access.**
 
-Follow [@trashz403](https://github.com/trashz403) for updates and improvements!
+Follow [@trashz403](https://github.com/trashz403) for updates and improvements ❤!
