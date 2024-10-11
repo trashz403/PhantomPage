@@ -21,40 +21,40 @@ def banner():
     {white} |{green} ██╔═══╝ ██╔══██║██╔══██║██║╚██╗██║   ██║   ██║   ██║██║╚██╔╝██║{white} |
     {white} |{green} ██║     ██║  ██║██║  ██║██║ ╚████║   ██║   ╚██████╔╝██║ ╚═╝ ██║{white} |
     {white} |{green} ╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝   ╚═╝    ╚═════╝ ╚═╝     ╚═╝{white} |
-    {white}+-----------------------------------------------------------------+
-    {white}|{green}PHANTOM TOOL - A simple tool to clone websites and download files{white}| 
-    {white}+-----------------------------------------------------------------+ 
+    {white} +-----------------------------------------------------------------+
+    {white} |{green}PHANTOM TOOL - A simple tool to clone websites and download files{white}| 
+    {white} +-----------------------------------------------------------------+ 
     """
     print(banner_text)
     print(f"{green}Script started at : {red}{start_time}{reset}\n")
 
 def handle_clone(url=None, file_url=None):
     if url:
-        print(f"{white}[{green}+{white}]{green} Starting to mirror the website {cyan}: {red}{url}")
+        print(f"{white} [{green}+{white}]{green} Starting to mirror the website {cyan}: {red}{url}")
         if mirrormate.clone(url=url):
-            print(f"{white}[{green}+{white}]{green} Successfully mirrored the website: {url}")
+            print(f"{white} [{green}+{white}]{green} Successfully mirrored the website : {url}")
         else:
-            print(f"{white}[{red}+{white}] {red}Failed to mirror the website: {url}")
+            print(f"{white} [{red}+{white}] {red}Failed to mirror the website : {url}")
     elif file_url:
-        print(f"{white}[{green}+{white}]{green} Starting to download the file: {file_url}")
+        print(f"{white} [{green}+{white}]{green} Starting to download the file : {file_url}")
         if mirrormate.clone(file_url=file_url):
-            print(f"{white}[{green}+{white}]{green} Successfully downloaded the file: {file_url}")
+            print(f"{white} [{green}+{white}]{green} Successfully downloaded the file : {file_url}")
         else:
-            print(f"{white}[{red}+{white}] {red}Failed to download the file: {file_url}")
+            print(f"{white} [{red}+{white}] {red}Failed to download the file : {file_url}")
     else:
-        print(f"{white}[{red}+{white}] {red}Error: No valid URL or file URL provided.")
+        print(f"{white} [{red}+{white}] {red}Error: No valid URL or file URL provided.")
 
 def main():
     banner()
 
-    parser = argparse.ArgumentParser(description='phantom: A simple tool to clone websites and download files.')
+    parser = argparse.ArgumentParser(description='phantom : A simple tool to clone websites and download files.')
     parser.add_argument('--clone', type=str, help='URL of the website to mirror.')
     parser.add_argument('--file', type=str, help='URL of the file to download.')
     
     args = parser.parse_args()
 
     if args.clone and args.file:
-        print(f"{white}[{red}+{white}] {red}Error: Please specify either --clone or --file, not both.")
+        print(f"{white} [{red}+{white}] {red}Error : Please specify either --clone or --file, not both.")
         sys.exit(1)
 
     if args.clone:
@@ -62,7 +62,7 @@ def main():
     elif args.file:
         handle_clone(file_url=args.file)
     else:
-        print(f"{white}[{red}+{white}] {red}Error: You must specify either --clone or --file.")
+        print(f" {white}[{red}+{white}] {red}Error : You must specify either --clone or --file.")
         sys.exit(1)
 
 if __name__ == "__main__":
