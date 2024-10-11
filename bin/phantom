@@ -1,0 +1,33 @@
+#!/usr/bin/python3 
+
+import argparse
+import sys
+from mirrormate import clone
+
+def main():
+    parser = argparse.ArgumentParser(description='MirrorMate: A simple tool to clone websites and download files.')
+    parser.add_argument('--mirror', type=str, help='URL of the website to mirror.')
+    parser.add_argument('--copy', type=str, help='URL of the file to download.')
+    parser.add_argument('--silent', action='store_true', help='Suppress output messages.')
+    
+    args = parser.parse_args()
+    
+    if args.mirror:
+        print("Starting to mirror the website...")
+        if clone(url=args.mirror, silent=args.silent):
+            print("Successfully mirrored the website.")
+        else:
+            print("Not downloadable.")
+    
+    elif args.copy:
+        print("Starting to download the file...")
+        if clone(file_url=args.copy, silent=args.silent):
+            print("Successfully downloaded the file.")
+        else:
+            print("Not downloadable.")
+    
+    else:
+        print("No valid arguments provided. Use --mirror or --copy.")
+
+if __name__ == "__main__":
+    main()
