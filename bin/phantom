@@ -1,33 +1,38 @@
-#!/usr/bin/python3 
+#!/usr/bin/python3
 
 import argparse
 import sys
 from mirrormate import clone
 
 def main():
-    parser = argparse.ArgumentParser(description='phantom : A simple tool to clone websites and download files.')
-    parser.add_argument('--mirror', type=str, help='URL of the website to mirror.')
-    parser.add_argument('--copy', type=str, help='URL of the file to download.')
-    parser.add_argument('--silent', action='store_true', help='Suppress output messages.')
-    
+    parser = argparse.ArgumentParser(description='phantom: A simple tool to clone websites and download files.')
+    parser.add_argument('--clone', type=str, help='URL of the website to mirror.')
+    parser.add_argument('--file', type=str, help='URL of the file to download.')
+    parser.add_argument('--silent', action='store_true', help='Run the tool in silent mode.')
+
     args = parser.parse_args()
+
+    if args.clone and args.file:
+        print("Error: Please specify either --clone or --file, not both.")
+        sys.exit(1)
     
-    if args.mirror:
+    if args.clone:
         print("Starting to mirror the website...")
-        if clone(url=args.mirror, silent=args.silent):
+        if clone(url=args.clone, silent=args.silent):
             print("Successfully mirrored the website.")
         else:
-            print("Not downloadable.")
+            print("Failed to mirror the website.")
     
-    elif args.copy:
+    elif args.file:
         print("Starting to download the file...")
-        if clone(file_url=args.copy, silent=args.silent):
+        if clone(file_url=args.file, silent=args.silent):
             print("Successfully downloaded the file.")
         else:
-            print("Not downloadable.")
+            print("Failed to download the file.")
     
     else:
-        print("No valid arguments provided. Use --mirror or --copy.")
+        print("Error: You must specify either --clone or --file.")
+        sys.exit(1)
 
 if __name__ == "__main__":
     main()
