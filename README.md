@@ -61,3 +61,15 @@ This command will download the file located at `https://example.com/file.py`.
 - **Both `--clone` and `--file` Provided**: If you specify both `--clone` and `--file` options simultaneously, the tool will raise an error and exit.
 - **No URL Provided**: If neither `--clone` nor `--file` is specified, the tool will prompt you to provide at least one option and exit.
 
+### *Thanks to all contributors*:
+
+<table>
+  <tr align="center">
+    <td><a href="https://github.com/GH05THUNTER5"><img src="https://avatars.githubusercontent.com/u/108191615?v=100" /><br /><sub><b>GH05T-HUNTER5</b></sub></a></td>
+    <td><a href="https://github.com/trashz403"><img src="https://avatars.githubusercontent.com/u/107699834?v=100" /><br /><sub><b>trashz403</b></sub></a></td>
+  </tr>
+<table>
+  
+⚠ **Note: Always use this tool responsibly and only on systems you have permission to access.**
+
+Follow [@trashz403](https://github.com/trashz403) for updates and improvements!
