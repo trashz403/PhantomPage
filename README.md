@@ -30,9 +30,9 @@ Once the setup is complete, you can use the tool via the command line.
 
 ### Command Line Options
 
-- `--clone <URL>`: Clone the specified website.
-- `--file <URL>`: Download the specified file.
-- `--help`: Display help message and usage instructions.
+- `--clone <URL>` : Clone the specified website.
+- `--file <URL>` : Download the specified file.
+- `--help` : Display help message and usage instructions.
 
 ### Example Commands
 
@@ -61,12 +61,3 @@ This command will download the file located at `https://example.com/file.py`.
 - **Both `--clone` and `--file` Provided**: If you specify both `--clone` and `--file` options simultaneously, the tool will raise an error and exit.
 - **No URL Provided**: If neither `--clone` nor `--file` is specified, the tool will prompt you to provide at least one option and exit.
 
-## Contributing
-
-If you'd like to contribute to this project, feel free to fork the repository and submit a pull request.
-
-## License
-
-This project is licensed under the MIT License.
-
----
