@@ -44,6 +44,14 @@ main() {
     if [[ -f "$path_align/phantom" ]]; then
         chmod +x "$path_align/phantom"
         pip install mirrormate
+
+        if [[ $? -eq 0 ]]; then
+            echo -e "${white} [${green}+${white}]${green} mirrormate installed successfully!${reset}"
+        else
+            echo -e "${white} [${red}+${white}]${red} Error : Failed to install mirrormate.${reset}"
+            exit 1
+        fi
+
         clear
         banner
     else
