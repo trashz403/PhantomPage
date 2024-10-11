@@ -32,7 +32,6 @@ def main():
         print("Error: Please specify either --clone or --file, not both.")
         sys.exit(1)
 
-    # Call the handle_clone function with the appropriate arguments
     if args.clone:
         handle_clone(url=args.clone, silent=args.silent)
     elif args.file:
