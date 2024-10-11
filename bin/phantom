@@ -3,30 +3,41 @@
 import argparse
 import sys
 import mirrormate
+from datetime import datetime
 
-# banner add chey 
+def banner():
+    start_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    banner_text = """
+    ============================================
+                PHANTOM TOOL
+    A simple tool to clone websites and download files
+    ============================================
+    """
+    print(banner_text)
+    print(f"Script started at : {start_time}\n")
 
-def handle_clone(url=None, file_url=None, silent=False):
+def handle_clone(url=None, file_url=None):
     if url:
-        print(f"Starting to mirror the website: {url} (silent: {silent})")
-        if mirrormate.clone(url=url, silent=silent):
-            print(f"Successfully mirrored the website: {url}")
+        print(f"Starting to mirror the website : {url}")
+        if mirrormate.clone(url=url):
+            print(f"Successfully mirrored the website : {url}")
         else:
-            print(f"Failed to mirror the website: {url}")
+            print(f"Failed to mirror the website : {url}")
     elif file_url:
-        print(f"Starting to download the file: {file_url} (silent: {silent})")
-        if mirrormate.clone(file_url=file_url, silent=silent):
-            print(f"Successfully downloaded the file: {file_url}")
+        print(f"Starting to download the file : {file_url}")
+        if mirrormate.clone(file_url=file_url):
+            print(f"Successfully downloaded the file : {file_url}")
         else:
-            print(f"Failed to download the file: {file_url}")
+            print(f"Failed to download the file : {file_url}")
     else:
-        print("Error: No valid URL or file URL provided.")
+        print("Error : No valid URL or file URL provided.")
 
 def main():
-    parser = argparse.ArgumentParser(description='phantom : A simple tool to clone websites and download files.')
+    banner()
+
+    parser = argparse.ArgumentParser(description='phantom: A simple tool to clone websites and download files.')
     parser.add_argument('--clone', type=str, help='URL of the website to mirror.')
     parser.add_argument('--file', type=str, help='URL of the file to download.')
-    parser.add_argument('--silent', action='store_true', help='Run the tool in silent mode.')
     
     args = parser.parse_args()
 
@@ -35,9 +46,9 @@ def main():
         sys.exit(1)
 
     if args.clone:
-        handle_clone(url=args.clone, silent=args.silent)
+        handle_clone(url=args.clone)
     elif args.file:
-        handle_clone(file_url=args.file, silent=args.silent)
+        handle_clone(file_url=args.file)
     else:
         print("Error : You must specify either --clone or --file.")
         sys.exit(1)
