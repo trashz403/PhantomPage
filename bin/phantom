@@ -5,7 +5,7 @@ import sys
 from mirrormate import clone
 
 def main():
-    parser = argparse.ArgumentParser(description='MirrorMate: A simple tool to clone websites and download files.')
+    parser = argparse.ArgumentParser(description='phantom : A simple tool to clone websites and download files.')
     parser.add_argument('--mirror', type=str, help='URL of the website to mirror.')
     parser.add_argument('--copy', type=str, help='URL of the file to download.')
     parser.add_argument('--silent', action='store_true', help='Suppress output messages.')
