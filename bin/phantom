@@ -5,13 +5,13 @@ import sys
 import mirrormate
 from datetime import datetime
 
-def banner():
-    green = "\033[92m"
-    red = "\033[91m"
-    white = "\033[97m"
-    reset = "\033[0m"
-    cyan = "\033[36m"
+green = "\033[92m"
+red = "\033[91m"
+white = "\033[97m"
+reset = "\033[0m"
+cyan = "\033[36m"
 
+def banner():
     start_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     banner_text = f"""
     {white} +-----------------------------------------------------------------+
@@ -22,8 +22,8 @@ def banner():
     {white} |{green} ██║     ██║  ██║██║  ██║██║ ╚████║   ██║   ╚██████╔╝██║ ╚═╝ ██║{white} |
     {white} |{green} ╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝   ╚═╝    ╚═════╝ ╚═╝     ╚═╝{white} |
     {white}+-----------------------------------------------------------------+
-    {white}|{green}PHANTOM TOOL - A simple tool to clone websites and download files{white}|
-    {white}+-----------------------------------------------------------------+
+    {white}|{green}PHANTOM TOOL - A simple tool to clone websites and download files{white}| 
+    {white}+-----------------------------------------------------------------+ 
     """
     print(banner_text)
     print(f"{green}Script started at : {red}{start_time}{reset}\n")
