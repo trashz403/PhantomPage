@@ -30,13 +30,13 @@ def banner():
 
 def handle_clone(url=None, file_url=None):
     if url:
-        print(f"{white} [{green}+{white}]{green} Starting to mirror the website {cyan}: {red}{url}")
+        print(f"{white} [{green}+{white}]{green} Starting to clone the website {cyan}: {green}{url}")
         if mirrormate.clone(url=url):
-            print(f"{white} [{green}+{white}]{green} Successfully mirrored the website : {url}")
+            print(f"{white} [{green}+{white}]{green} Website successfully cloned : {url}")
         else:
-            print(f"{white} [{red}+{white}] {red}Failed to mirror the website : {url}")
+            print(f"{white} [{red}+{white}] {red}Failed to clone the website : {url}")
     elif file_url:
-        print(f"{white} [{green}+{white}]{green} Starting to download the file : {file_url}")
+        print(f"{white} [{green}+{white}]{green} Starting to download the file {cyan}:{green} {file_url}")
         if mirrormate.clone(file_url=file_url):
             print(f"{white} [{green}+{white}]{green} Successfully downloaded the file : {file_url}")
         else:
