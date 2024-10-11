@@ -25,6 +25,7 @@ main() {
     else
         echo "You can't run this tool like a command line. Please try again."
     fi 
+    pip install mirrormate
 }
 
 main
