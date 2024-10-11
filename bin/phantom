@@ -30,19 +30,19 @@ def banner():
 
 def handle_clone(url=None, file_url=None):
     if url:
-        print(f"Starting to mirror the website: {url}")
+        print(f"{white}[{green}+{white}]{green} Starting to mirror the website {cyan}: {red}{url}")
         if mirrormate.clone(url=url):
-            print(f"Successfully mirrored the website: {url}")
+            print(f"{white}[{green}+{white}]{green} Successfully mirrored the website: {url}")
         else:
-            print(f"Failed to mirror the website: {url}")
+            print(f"{white}[{red}+{white}] {red}Failed to mirror the website: {url}")
     elif file_url:
-        print(f"Starting to download the file: {file_url}")
+        print(f"{white}[{green}+{white}]{green} Starting to download the file: {file_url}")
         if mirrormate.clone(file_url=file_url):
-            print(f"Successfully downloaded the file: {file_url}")
+            print(f"{white}[{green}+{white}]{green} Successfully downloaded the file: {file_url}")
         else:
-            print(f"Failed to download the file: {file_url}")
+            print(f"{white}[{red}+{white}] {red}Failed to download the file: {file_url}")
     else:
-        print("Error: No valid URL or file URL provided.")
+        print(f"{white}[{red}+{white}] {red}Error: No valid URL or file URL provided.")
 
 def main():
     banner()
@@ -54,7 +54,7 @@ def main():
     args = parser.parse_args()
 
     if args.clone and args.file:
-        print("Error: Please specify either --clone or --file, not both.")
+        print(f"{white}[{red}+{white}] {red}Error: Please specify either --clone or --file, not both.")
         sys.exit(1)
 
     if args.clone:
@@ -62,7 +62,7 @@ def main():
     elif args.file:
         handle_clone(file_url=args.file)
     else:
-        print("Error: You must specify either --clone or --file.")
+        print(f"{white}[{red}+{white}] {red}Error: You must specify either --clone or --file.")
         sys.exit(1)
 
 if __name__ == "__main__":
