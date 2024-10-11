@@ -15,7 +15,7 @@ Clone the repository and run the setup script to install the tool:
 ```bash
 git clone https://github.com/trashz/phantom
 ```
-
+ 
 ```bash
 cd phantom
 ```
