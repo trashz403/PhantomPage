@@ -1,5 +1,5 @@
 # PhantomPage
 
 ```bash
-phatom --mirror url
+phatom --clone url
 ```
