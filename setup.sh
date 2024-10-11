@@ -43,12 +43,12 @@ main() {
     
     if [[ -f "$path_align/phantom" ]]; then
         chmod +x "$path_align/phantom"
+        pip install mirrormate
+        clear
+        banner
     else
         echo "${white} [${red}+${white}]${red}You can't run this tool like a command line. Please try again."
     fi 
-    pip install mirrormate
-    clear
-    banner
 }
 
 main
