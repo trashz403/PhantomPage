@@ -6,36 +6,43 @@ import mirrormate
 from datetime import datetime
 
 def banner():
+    green = "\033[92m"
+    red = "\033[91m"
+    white = "\033[97m"
+    reset = "\033[0m"
+    cyan = "\033[36m"
+
     start_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    banner_text = """
-    ██████╗ ██╗  ██╗ █████╗ ███╗   ██╗████████╗ ██████╗ ███╗   ███╗
-    ██╔══██╗██║  ██║██╔══██╗████╗  ██║╚══██╔══╝██╔═══██╗████╗ ████║
-    ██████╔╝███████║███████║██╔██╗ ██║   ██║   ██║   ██║██╔████╔██║
-    ██╔═══╝ ██╔══██║██╔══██║██║╚██╗██║   ██║   ██║   ██║██║╚██╔╝██║
-    ██║     ██║  ██║██║  ██║██║ ╚████║   ██║   ╚██████╔╝██║ ╚═╝ ██║
-    ╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝   ╚═╝    ╚═════╝ ╚═╝     ╚═╝
-    
-    PHANTOM TOOL - A simple tool to clone websites and download files
-    ================================================================
+    banner_text = f"""
+    {white} +-----------------------------------------------------------------+
+    {white} |{green} ██████╗ ██╗  ██╗ █████╗ ███╗   ██╗████████╗ ██████╗ ███╗   ███╗{white} |
+    {white} |{green} ██╔══██╗██║  ██║██╔══██╗████╗  ██║╚══██╔══╝██╔═══██╗████╗ ████║{white} |
+    {white} |{green} ██████╔╝███████║███████║██╔██╗ ██║   ██║   ██║   ██║██╔████╔██║{white} |
+    {white} |{green} ██╔═══╝ ██╔══██║██╔══██║██║╚██╗██║   ██║   ██║   ██║██║╚██╔╝██║{white} |
+    {white} |{green} ██║     ██║  ██║██║  ██║██║ ╚████║   ██║   ╚██████╔╝██║ ╚═╝ ██║{white} |
+    {white} |{green} ╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝   ╚═╝    ╚═════╝ ╚═╝     ╚═╝{white} |
+    {white}+-----------------------------------------------------------------+
+    {white}|{green}PHANTOM TOOL - A simple tool to clone websites and download files{white}|
+    {white}+-----------------------------------------------------------------+
     """
     print(banner_text)
-    print(f"Script started at : {start_time}\n")
+    print(f"{green}Script started at : {red}{start_time}{reset}\n")
 
 def handle_clone(url=None, file_url=None):
     if url:
-        print(f"Starting to mirror the website : {url}")
+        print(f"Starting to mirror the website: {url}")
         if mirrormate.clone(url=url):
-            print(f"Successfully mirrored the website : {url}")
+            print(f"Successfully mirrored the website: {url}")
         else:
-            print(f"Failed to mirror the website : {url}")
+            print(f"Failed to mirror the website: {url}")
     elif file_url:
-        print(f"Starting to download the file : {file_url}")
+        print(f"Starting to download the file: {file_url}")
         if mirrormate.clone(file_url=file_url):
-            print(f"Successfully downloaded the file : {file_url}")
+            print(f"Successfully downloaded the file: {file_url}")
         else:
-            print(f"Failed to download the file : {file_url}")
+            print(f"Failed to download the file: {file_url}")
     else:
-        print("Error : No valid URL or file URL provided.")
+        print("Error: No valid URL or file URL provided.")
 
 def main():
     banner()
@@ -47,7 +54,7 @@ def main():
     args = parser.parse_args()
 
     if args.clone and args.file:
-        print("Error : Please specify either --clone or --file, not both.")
+        print("Error: Please specify either --clone or --file, not both.")
         sys.exit(1)
 
     if args.clone:
@@ -55,7 +62,7 @@ def main():
     elif args.file:
         handle_clone(file_url=args.file)
     else:
-        print("Error : You must specify either --clone or --file.")
+        print("Error: You must specify either --clone or --file.")
         sys.exit(1)
 
 if __name__ == "__main__":
