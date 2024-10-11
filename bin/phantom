@@ -8,10 +8,15 @@ from datetime import datetime
 def banner():
     start_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     banner_text = """
-    ============================================
-                PHANTOM TOOL
-    A simple tool to clone websites and download files
-    ============================================
+    ██████╗ ██╗  ██╗ █████╗ ███╗   ██╗████████╗ ██████╗ ███╗   ███╗
+    ██╔══██╗██║  ██║██╔══██╗████╗  ██║╚══██╔══╝██╔═══██╗████╗ ████║
+    ██████╔╝███████║███████║██╔██╗ ██║   ██║   ██║   ██║██╔████╔██║
+    ██╔═══╝ ██╔══██║██╔══██║██║╚██╗██║   ██║   ██║   ██║██║╚██╔╝██║
+    ██║     ██║  ██║██║  ██║██║ ╚████║   ██║   ╚██████╔╝██║ ╚═╝ ██║
+    ╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝   ╚═╝    ╚═════╝ ╚═╝     ╚═╝
+    
+    PHANTOM TOOL - A simple tool to clone websites and download files
+    ================================================================
     """
     print(banner_text)
     print(f"Script started at : {start_time}\n")
