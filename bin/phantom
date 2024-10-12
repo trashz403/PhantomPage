@@ -4,6 +4,7 @@ import argparse
 import sys
 import mirrormate
 from datetime import datetime
+from validlink import check_url_validity
 
 green = "\033[92m"
 red = "\033[91m"
@@ -30,12 +31,18 @@ def banner():
 
 def handle_clone(url=None, file_url=None):
     if url:
+        if not check_url_validity(url):
+            print(f"{white} [{red}+{white}] {red}Invalid URL provided: {url}")
+            return
         print(f"{white} [{green}+{white}]{green} Starting to clone the website {cyan}: {green}{url}")
         if mirrormate.clone(url=url):
             print(f"{white} [{green}+{white}]{green} Website successfully cloned : {url}")
         else:
             print(f"{white} [{red}+{white}] {red}Failed to clone the website : {url}")
     elif file_url:
+        if not check_url_validity(file_url):
+            print(f"{white} [{red}+{white}] {red}Invalid file URL provided: {file_url}")
+            return
         print(f"{white} [{green}+{white}]{green} Starting to download the file {cyan}:{green} {file_url}")
         if mirrormate.clone(file_url=file_url):
             print(f"{white} [{green}+{white}]{green} Successfully downloaded the file : {file_url}")
