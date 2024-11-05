@@ -21,7 +21,7 @@ cd phantom
 ```
 
 ```bash
-bash setup.py
+bash setup.sh
 ```
 
 ## Usage
